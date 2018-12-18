@@ -35,13 +35,19 @@
         position: relative;
         transition: all 2s;
         &::after {
+            @include d(t) {
+                display: none;
+            }
+            @include d(m) {
+                display: none;
+            }
             content: '';
             position: absolute;
             display: block;
             width: 0%;
             margin-top: 2px;
             height: 1px;
-            background: red;
+            background: $red;
             opacity: 1;
         }
         &:hover::after {
