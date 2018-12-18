@@ -1,0 +1,52 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: $primary;
+    z-index: 10;
+    .header_menu {
+        text-align: right;
+        ul li {
+            display: inline-block;
+            margin-left: 25px;
+            margin-top: 20px;
+            a {
+                @include type-1(14);
+                font-weight: bold;
+                letter-spacing: .1em;
+                text-transform: uppercase;
+                color: $branco;
+                text-decoration: none;
+                padding: 10px 0;
+                transition: all .3s ease;
+                // &:hover {
+                //     opacity: .5;
+                // }
+            }
+        }
+    }
+}
+
+
+// Menu Animation
+.header_menu {
+    ul li a {
+        position: relative;
+        transition: all 2s;
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 0%;
+            margin-top: 2px;
+            height: 1px;
+            background: red;
+            opacity: 1;
+        }
+        &:hover::after {
+            width: 100%;
+            transition: all .5s;
+        }
+    }
+}
